@@ -654,6 +654,10 @@ video {
   flex-direction: column-reverse;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -734,6 +738,10 @@ video {
   align-self: flex-end;
 }
 
+.break-all {
+  word-break: break-all;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -792,6 +800,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.indent-8 {
+  text-indent: 2rem;
 }
 
 .text-xl {
