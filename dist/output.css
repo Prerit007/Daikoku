@@ -738,10 +738,6 @@ video {
   align-self: flex-end;
 }
 
-.break-all {
-  word-break: break-all;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
