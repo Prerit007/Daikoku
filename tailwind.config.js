@@ -7,7 +7,7 @@ module.exports = {
         darkRed: "hsl(4, 48%, 48%)",
         brightRed: "hsl(12, 88%, 59%)",
         darkBlue: "hsl(228, 39%, 23%)",
-        liliac: "	hsl(220, 56%, 95%)",
+        liliac: "	hsl(277, 88%, 80%)",
         brightRedLight: "hsl(12, 88%, 69%)",
         brightRedSupLight: "hsl(12, 88%, 95%)",
         veryDarkBlue: "hsl(227, 25%, 22%)",
