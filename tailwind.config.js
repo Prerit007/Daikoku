@@ -13,6 +13,7 @@ module.exports = {
         veryDarkBlue: "hsl(227, 25%, 22%)",
         orange: "hsl(4, 76%, 66%)",
         littleText: "hsl(8, 37%, 84%)",
+        bgBlue: "#3f86d2",
       },
     },
   },
