@@ -2,7 +2,6 @@ const exp = require('express');
 const path = require('path');
 
 const router = exp.Router();
-//const router = exp();
 
 const rootDir = require('../util/path');
 
