@@ -7,6 +7,9 @@ const session = require('express-session');
 
 const aboutData = require('./routes/about');
 const homeData = require('./routes/home');
+const contactData = require('./routes/contact');
+const projectsData = require('./routes/projects');
+
 const authData = require('./routes/auth');
 const Student = require('./models/student');
 
@@ -33,6 +36,8 @@ app.use(exp.static(path.join(__dirname, 'public')));
 
 app.use(aboutData);
 app.use(homeData);
+app.use(contactData);
+app.use(projectsData);
 app.use(authData);
 
 mongoose.connect('mongodb+srv://dg325:daikoku@cluster0.omymgdd.mongodb.net/Daikoku?retryWrites=true&w=majority')
