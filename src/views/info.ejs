@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+
+    <main>
+        <form class="login-form" action="/login" method="POST">
+            <div class="form-control">
+                <label for="About">About</label>
+                <input type="text" name="about" id="about">
+            </div>
+            <div class="form-control">
+                <label for="College">College</label>
+                <input type="text" name="college" id="college">
+            </div>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </main>
+
+<%- include('includes/end.ejs') %>

@@ -1,6 +1,16 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const Schema = mongoose()
+const Schema = mongoose.Schema;
+
+const projectSchema = new Schema({
+    title: String,
+    price: Number
+});
+
+module.exports = mongoose.model('Projects', projectSchema);
+
+
+
 
 // const mongodb = require('mongodb');
 // const getDb = require('./util/database').getDb;

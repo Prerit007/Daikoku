@@ -1,3 +1,60 @@
+var mongoose = require("mongoose");
+var passportLocalMongoose = require("passport-local-mongoose");
+
+var studentSchema = new mongoose.Schema({
+    username:String,
+    password:String
+    //projectList: {projects: [{projectId: {type: Schema.Types.ObjectId, ref: 'Projects'},projLink: {String}}]}
+});
+
+studentSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("Students",studentSchema);
+
+
+
+
+
+
+// const mongoose = require('mongoose');
+
+// const Schema = mongoose.Schema;
+
+// const studentSchema = new mongoose.SchemaType({
+//     email: String,
+//     password: String,
+//     projectList: {projects: [{projectId: {type: Schema.Types.ObjectId, ref: 'Project'},projLink: {String}
+    
+//                         }]}
+// });
+
+// studentSchema.methods.EnrollToProject = function(project) {
+//     const projIndex = this.projectList.projects.findIndex(p => {
+//         return p.projectId.toString() === project._id.toString();
+//     });
+
+//     if (projIndex >= 0) {
+//         console.log("Already Enrolled");
+//     } else {
+//         updatedProjectList.push({
+//             projectId: project._id.toString()
+//             //,projLink: // get input from html 
+//         });
+//     }
+//     const updatedList = {
+//         projectList: updatedProjectList
+//     };
+//     this.projectList = updatedList;
+//     return this.save()
+// };
+
+// module.exports = mongoose.model('Student', studentSchema);
+
+
+
+
+
+
 // const mongodb = require('mongodb');
 
 // const objectId = mongodb.ObjectId;

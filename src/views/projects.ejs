@@ -1,5 +1,21 @@
 <%- include('includes/head.ejs') %>
-        <section id="values"></section>
-        <section id="feedback" class=""></section>
-        <%- include('includes/end.ejs') %>
+    <main>
+        <form class="projects-form" action="/projects" method="POST">
+            <div class="form-control">
+                <h1>Project1</h1>
+                <label for="">Submission Link</label>
+                <input type="text" name="proj1" id="proj1">
+            </div>
+            <button class="btn" type="submit">Submit</button>
 
+            <div class="form-control">
+                <h1>Project2</h1>
+                <label for="">Submission Link</label>
+                <input type="text" name="proj2" id="proj2">
+            </div>
+            <button class="btn" type="submit">Submit</button>
+
+        </form>
+    </main>
+
+<%- include('includes/end.ejs') %>
