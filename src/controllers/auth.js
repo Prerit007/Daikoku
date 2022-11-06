@@ -21,15 +21,23 @@ exports.postLogin = (req, res, next) => {
     Student.findOne({email: email})
     .then(student => {
         if (!student) {
-            console.log("Returned here");
+            console.log("Returned hereaaa");
             return res.redirect('/login');
         }
         bcrypt
         .compare(password, student.password)
         .then(doMatch => {
             if (doMatch) {
+                req.session.isLoggedIn = true;
+                req.session.student = student;
+                req.session.isInfoComp=false;
                 console.log("Login successful");
-                return res.redirect('/home'); //it should be redirected to profile
+                return req.session.save(err => {
+                    console.log(err);
+                    if(!student.isInfoComplete) {
+                        return res.redirect('/info'); }
+                    return res.redirect('/home'); //it should be redirected to profile
+            });
             }
             console.log("Returned here 2");
             res.redirect('/login');
@@ -65,7 +73,9 @@ exports.postSignup = (req, res, next) => {
             const student = new Student({
                 email: email,
                 password: hashedPassword,
-                projectList: {projects:[]}
+                projectList: {projects:[]},
+                about: "",
+                college: ""
             });
             return student.save();
         })
@@ -77,3 +87,4 @@ exports.postSignup = (req, res, next) => {
         console.log(err);
     });
 };
+

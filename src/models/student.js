@@ -29,7 +29,10 @@ const studentSchema = new Schema({
     projectList: {
         projects: [{projectId: {type: Schema.Types.ObjectId, ref: 'Project'},
         projLink: {String}
-    }]}
+    }]},
+    about: String,
+    college: String,
+    isInfoComplete: {type: Boolean, default: false}
 });
 
 studentSchema.methods.EnrollToProject = function(project) {
