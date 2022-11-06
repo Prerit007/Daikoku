@@ -15,7 +15,7 @@ const contactData = require('./routes/contact');
 const projectsData = require('./routes/projects');
 const infoData = require('./routes/info');
 
-//const authData = require('./routes/auth');
+const authData = require('./routes/auth');
 const Student = require('./models/student');
 
 const MONGODB_URI = 'mongodb+srv://dg325:daikoku@cluster0.omymgdd.mongodb.net/Daikoku'
@@ -31,16 +31,16 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exp.static(path.join(__dirname, 'public')));
-app.use(require("express-session")({
-    secret:"Rusty is the best og in the world",
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(require("express-session")({
+//     secret:"Rusty is the best og in the world",
+//     resave: false,
+//     saveUninitialized: false
+// }));
 // app.use(session({
 //     secret: 'daikoku', 
 //     resave: false, 
 //     saveUninitialized: false, 
-//     //store: store
+//     store: store
 // })
 // );
 
@@ -49,61 +49,71 @@ app.use(require("express-session")({
 //     keys: [keys.cookieKey],
 // }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-passport.use(new LocalStrategy(Student.authenticate()));
-passport.serializeUser(Student.serializeUser());
-passport.deserializeUser(Student.deserializeUser());
+// passport.use(new LocalStrategy(Student.authenticate()));
+// passport.serializeUser(Student.serializeUser());
+// passport.deserializeUser(Student.deserializeUser());
 
 app.use(homeData);
 app.use(aboutData);
 app.use(contactData);
 app.use(projectsData);
-//app.use(authData);
+app.use(authData);
 app.use(infoData);
 
-app.get("/",isLoggedIn, function(req, res){
-    res.render("projects");
-});
+// app.get("/",isLoggedIn, function(req, res){
+//     res.render("projects");
+// });
 
-app.get("/signup", function(req, res){
-    res.render("signup");
-});
-//handling user sign up
-app.post("/signup", function(req, res){
-Student.register(new Student({username:req.body.username}), req.body.password, function(err, student){
-       if(err){
-            console.log(err);
-            return res.render('info');
-        } //user stragety
-        passport.authenticate("local")(req, res, function(){
-            res.redirect("/info"); //once the user sign up
-       }); 
-    });
-});
+// app.get("/signup", function(req, res){
+//     res.render("signup");
+// });
+// //handling user sign up
+// app.post("/signup", function(req, res){
+// Student.register(new Student({username:req.body.username}), req.body.password, function(err, student){
+//     if(err){
+//             console.log(err);
+//             return res.render('info');
+//         } //user stragety
+//         passport.authenticate("local")(req, res, function(){
+//             res.redirect("/info"); //once the user sign up
+//     }); 
+//     });
+// });
 
-app.get("/login", function(req, res){
-    res.render("login");
-})
+// app.get("/login", function(req, res){
+//     res.render("login");
+// })
 
-app.post("/login", passport.authenticate("local",{
-    successRedirect:"/projects",
-    failureRedirect:"/contact"
-}),function(req, res){
-    res.send("Student is "+ req.student.id);
-});
+// app.post("/login", passport.authenticate("local",{
+//     successRedirect:"/projects",
+//     failureRedirect:"/contact"
+// }),function(req, res){
+//     res.send("Student is "+ req.student.id);
+// });
 
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect("/about");
-}
+// function isLoggedIn(req, res, next){
+//     if(req.isAuthenticated()){}
+//         return next();
+//     }
+//     res.redirect("/about");
+// }
 
 
 mongoose.connect('mongodb+srv://dg325:daikoku@cluster0.omymgdd.mongodb.net/Daikoku?retryWrites=true&w=majority')
 .then(result => {
+    console.log("Mongo Connection Successful");
+    // const student = new Student({
+    //     email: 'abc@gamil.com',
+    //     password: '1234',
+    //     projectList: {
+    //         projects: []
+    //     }
+    // });
+    // console.log(student);
+    //student.save();
     app.listen(3002);
 })
 .catch(err => {

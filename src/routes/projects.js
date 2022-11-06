@@ -11,6 +11,6 @@ router.get('/projects' , (req, res, next) => {
     res.render('projects');
 });
 
-//router.post('/profile', projectController.postEnrollment); //profile page
+router.post('/profile', projectController.postEnrollment); //profile page
 
 module.exports = router;

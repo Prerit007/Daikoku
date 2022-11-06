@@ -10,51 +10,37 @@ exports.getLogin = (req, res, next) => {
     // .split('=')[1];
     res.render('login', {
         path: '/login',
-        isAuthenticated: false
+        isAuthenticated: false,
+        isLoggedIn: false
     });
 };
 
-
-
-// exports.postLogin => {
-//     passport.authenticate("local", {
-//         successRedirect: "/home",
-//         failureRedirect: "/login"
-//     }), function(req, res) {
-//         res.send("Student is " + req.student.id);
-//     }
-// };
-
-
-
-// exports.postLogin = (req, res, next) => {
-//     const email = req.body.email;
-//     const password = req.body.password;
-//     Student.findOne({email: email})
-//     .then(student => {
-//         if (!student) {
-//             return res.redirect('/login');
-//         }
-//         bcrypt
-//         .compare(password, student.password)
-//         .then(doMatch => {
-//             if (doMatch) {
-//                 req.session.isLoggedIn = true;
-//                 req.session.student = student;
-//                 return req.session.save(err => {
-//                     console.log(err);
-//                     res.redirect('/home'); //it should be redirected to profile
-//                 });
-//             }
-//             res.redirect('/login');
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.redirect('/login');
-//         })
-//     })
-//     res.redirect('/home');
-// };
+exports.postLogin = (req, res, next) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    Student.findOne({email: email})
+    .then(student => {
+        if (!student) {
+            console.log("Returned here");
+            return res.redirect('/login');
+        }
+        bcrypt
+        .compare(password, student.password)
+        .then(doMatch => {
+            if (doMatch) {
+                console.log("Login successful");
+                return res.redirect('/home'); //it should be redirected to profile
+            }
+            console.log("Returned here 2");
+            res.redirect('/login');
+        })
+        .catch(err => {
+            console.log(err);
+            console.log("Returned here 3");
+            res.redirect('/login');
+        })
+    })
+};
 
 exports.getSignup = (req, res, next) => {
     res.render('signup', {
@@ -64,43 +50,30 @@ exports.getSignup = (req, res, next) => {
 };
 
 
-exports.postSignIp = (req, res) => {
-    Student.register(new Student({email: req.body.email}), req.body.password, function(err, student){
-        if (err) {
-            console.log(err);
-            return res.render('signup');
+exports.postSignup = (req, res, next) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    const confirmPassword = req.body.confirmPassword;
+    Student.findOne({email: email})
+    .then(stdDoc => {
+        if (stdDoc) {
+            return res.redirect('/signup');
         }
-        passport.authenticate("local")(req, res, function(){
-        res.redirect("/home"); //once the user sign up
-    });
+        return bcrypt
+        .hash(password, 12)
+        .then(hashedPassword => {
+            const student = new Student({
+                email: email,
+                password: hashedPassword,
+                projectList: {projects:[]}
+            });
+            return student.save();
+        })
+    })
+    .then(result => {
+        res.redirect('/login');
+    })
+    .catch(err=> {
+        console.log(err);
     });
 };
-
-// exports.postSignup = (req, res, next) => {
-//     const email = req.body.email;
-//     const password = req.body.password;
-//     const confirmPassword = req.body.confirmPassword;
-//     Student.findOne({email: email})
-//     .then(stdDoc => {
-//         if (stdDoc) {
-//             return res.redirect('/signup');
-//         }
-//         return bcrypt
-//         .hash(password, 12)
-//         .then(hashedPassword => {
-//             const student = new Student({
-//                 email: email,
-//                 password: hashedPassword,
-//                 prodjectList: []
-//             });
-//             return student.save();
-//         })
-//     })
-//     .then(result => {
-//         res.redirect('/login');
-//     })
-//     .catch(err=> {
-//         console.log(err);
-//     });
-
-// };

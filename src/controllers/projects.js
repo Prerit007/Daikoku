@@ -1,4 +1,4 @@
-// const Project = require('../models/project');
+const Project = require('../models/project');
 
 // exports.getProjects = (req, res, next) => {
 //     Project.find()
@@ -17,13 +17,13 @@
 //     const projId = req.params.projectId;
 // };
 
-// exports.postEnrollment = (req, res, next) => {
-//     const projId = req.body.projectId;
-//     Project.findById(projId)
-//     .then(project => {
-//         //return req.student.EnrollToProject(project);
-//     })
-//     .then(result => {
-//         res.redirect('/projects');
-//     });
-// };
+exports.postEnrollment = (req, res, next) => {
+    const projId = req.body.projectId;
+    Project.findById(projId)
+    .then(project => {
+        return req.student.EnrollToProject(project);
+    })
+    .then(result => {
+        res.redirect('/projects');
+    });
+};
