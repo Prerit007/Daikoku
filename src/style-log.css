@@ -199,6 +199,12 @@ form.sign-in-form {
   padding: 3rem 12% 2rem 17%;
 }
 
+.arr{
+  position: absolute;
+  left: 36px;
+  top: -112px;
+}
+
 .panel .content {
   color: #fff;
   transition: transform 0.9s ease-in-out;
