@@ -3,15 +3,9 @@ const bcrypt = require('bcryptjs');
 const Student = require('../models/student');
 
 exports.getLogin = (req, res, next) => {
-    // const isLoggedIn = req
-    // .get('Cookie')
-    // .split(';')[1]
-    // .trim()
-    // .split('=')[1];
     res.render('login', {
         path: '/login',
-        isAuthenticated: false,
-        isLoggedIn: false
+        isAuthenticated: false
     });
 };
 
@@ -21,7 +15,6 @@ exports.postLogin = (req, res, next) => {
     Student.findOne({email: email})
     .then(student => {
         if (!student) {
-            console.log("Returned hereaaa");
             return res.redirect('/login');
         }
         bcrypt
@@ -39,12 +32,10 @@ exports.postLogin = (req, res, next) => {
                     return res.redirect('/home'); //it should be redirected to profile
             });
             }
-            console.log("Returned here 2");
             res.redirect('/login');
         })
         .catch(err => {
             console.log(err);
-            console.log("Returned here 3");
             res.redirect('/login');
         })
     })
@@ -88,3 +79,11 @@ exports.postSignup = (req, res, next) => {
     });
 };
 
+
+exports.postLogout = (req, res, next) => {
+    req.session.isLoggedIn = false;
+    req.session.destroy(err => {
+        console.log(err);
+        res.redirect('/login');
+    });
+};

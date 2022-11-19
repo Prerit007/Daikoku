@@ -7,7 +7,9 @@ const rootDir = require('../util/path');
 
 router.get('/home' , (req, res, next) => {
     //res.sendFile(path.join(rootDir, 'views', 'home.html'));
-    res.render('home');
+    res.render('home', {
+        isAuthenticated: req.isLoggedIn
+    });
 });
 
 module.exports = router;
