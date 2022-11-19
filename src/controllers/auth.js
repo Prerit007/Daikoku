@@ -26,7 +26,6 @@ exports.postLogin = (req, res, next) => {
                 req.session.isInfoComp=false;
                 console.log("Login successful");
                 return req.session.save(err => {
-                    console.log(err);
                     if(!student.isInfoComplete) {
                         return res.redirect('/info'); }
                     return res.redirect('/home'); //it should be redirected to profile
@@ -83,7 +82,6 @@ exports.postSignup = (req, res, next) => {
 exports.postLogout = (req, res, next) => {
     req.session.isLoggedIn = false;
     req.session.destroy(err => {
-        console.log(err);
         res.redirect('/login');
     });
 };

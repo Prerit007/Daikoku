@@ -42,6 +42,7 @@ app.use((req, res, next) => {
     Student.findById(req.session.student._id)
     .then(user => {
         req.id = user._id;
+        req.isLoggedIn=req.session.isLoggedIn;
         next();
     })
     .catch(err => console.log(err));
