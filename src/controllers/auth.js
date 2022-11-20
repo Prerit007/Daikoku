@@ -1,11 +1,26 @@
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 const Student = require('../models/student');
 
+// const transport = nodemailer.createTransport(sendgridTransport({
+//     auth: {
+//         api_key: //add api key from sendgrid
+//     }
+// }));
+
 exports.getLogin = (req, res, next) => {
+    let message = req.flash('error');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('login', {
         path: '/login',
-        isAuthenticated: false
+        isAuthenticated: false,
+        errorMessage: message
     });
 };
 
@@ -15,6 +30,7 @@ exports.postLogin = (req, res, next) => {
     Student.findOne({email: email})
     .then(student => {
         if (!student) {
+            req.flash('error', "Invalid email or password");
             return res.redirect('/login');
         }
         bcrypt
@@ -31,6 +47,7 @@ exports.postLogin = (req, res, next) => {
                     return res.redirect('/home'); //it should be redirected to profile
             });
             }
+            req.flash('error', "Invalid email or password");
             res.redirect('/login');
         })
         .catch(err => {
@@ -41,9 +58,16 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.getSignup = (req, res, next) => {
+    let message = req.flash('error');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('signup', {
         path: '/signup',
-        isAuthenticated: false
+        isAuthenticated: false,
+        errorMessage: message
     });
 };
 
@@ -55,8 +79,10 @@ exports.postSignup = (req, res, next) => {
     Student.findOne({email: email})
     .then(stdDoc => {
         if (stdDoc) {
+            req.flash('error', 'E-Mail exists already, please pick a different one.')
             return res.redirect('/signup');
         }
+        //TODO check confirmPassword == password
         return bcrypt
         .hash(password, 12)
         .then(hashedPassword => {

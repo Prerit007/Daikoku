@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const flash = require('connect-flash');
 
 const aboutData = require('./routes/about');
 const homeData = require('./routes/home');
@@ -27,6 +28,7 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exp.static(path.join(__dirname, 'public')));
+app.use(flash());
 app.use(session({
     secret: 'daikoku', 
     resave: false, 
