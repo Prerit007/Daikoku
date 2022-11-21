@@ -3,16 +3,34 @@ const path = require('path');
 
 const router = exp.Router();
 
-const rootDir = require('../util/path');
-const projectController = require('../controllers/projects');
-
 router.get('/projects' , (req, res, next) => {
-    //res.sendFile(path.join(rootDir, 'views', 'home.html'));
     res.render('projects', {
         isAuthenticated: req.isLoggedIn
     });
 });
 
-router.post('/profile', projectController.postEnrollment); //profile page
+router.get('/p1', (req,res,next) => {
+    res.render('p1', {
+        isAuthenticated: req.isLoggedIn
+    });
+});
+
+router.get('/p2', (req,res,next) => {
+    res.render('p2', {
+        isAuthenticated: req.isLoggedIn
+    });
+});
+
+router.get('/p3', (req,res,next) => {
+    res.render('p3', {
+        isAuthenticated: req.isLoggedIn
+    });
+});
+
+router.get('/p4', (req,res,next) => {
+    res.render('p4', {
+        isAuthenticated: req.isLoggedIn
+    });
+});
 
 module.exports = router;
