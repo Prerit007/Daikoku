@@ -90,6 +90,7 @@ exports.postSignup = (req, res, next) => {
                 email: email,
                 password: hashedPassword,
                 projectList: {projects:[]},
+                name: "",
                 about: "",
                 college: ""
             });

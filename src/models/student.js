@@ -30,6 +30,7 @@ const studentSchema = new Schema({
         projects: [{projectId: {type: Schema.Types.ObjectId, ref: 'Project'},
         projLink: {String}
     }]},
+    name: String,
     about: String,
     college: String,
     isInfoComplete: {type: Boolean, default: false}
