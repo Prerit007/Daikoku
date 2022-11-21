@@ -11,7 +11,7 @@ const homeData = require('./routes/home');
 const contactData = require('./routes/contact');
 const projectsData = require('./routes/projects');
 const infoData = require('./routes/info');
-
+const profileData = require('./routes/profile');
 const authData = require('./routes/auth');
 const Student = require('./models/student');
 
@@ -56,6 +56,7 @@ app.use(contactData);
 app.use(projectsData);
 app.use(authData);
 app.use(infoData);
+app.use(profileData);
 
 mongoose.connect('mongodb+srv://dg325:daikoku@cluster0.omymgdd.mongodb.net/Daikoku?retryWrites=true&w=majority')
 .then(result => {
