@@ -27,8 +27,8 @@ const studentSchema = new Schema({
     email: String,
     password: String,
     projectList: {
-        projects: [{projectId: {type: Schema.Types.ObjectId, ref: 'Project'},
-        projLink: {String}
+        projects: [{projectId: {type: String},
+        projLink: {type: String}
     }]},
     name: String,
     about: String,

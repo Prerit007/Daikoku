@@ -1,6 +1,8 @@
 const exp = require('express');
 const path = require('path');
 
+const p1Controller = require('../controllers/projects');
+
 const router = exp.Router();
 
 router.get('/projects' , (req, res, next) => {
@@ -32,5 +34,7 @@ router.get('/p4', (req,res,next) => {
         isAuthenticated: req.isLoggedIn
     });
 });
+
+router.post('/p1', p1Controller.saveP1);
 
 module.exports = router;

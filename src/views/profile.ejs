@@ -7,8 +7,9 @@
         <h2>College: </h2>
         <h3><%= student.college %></h3>
         <h2>Projects: </h2>
-        <h3>get projects</h3>
-        
+        <% for (let i=0; i< student.projectList['projects'].length; i++) {%>
+        <h3><%= student.projectList['projects'][i].projectId %></h3>
+        <% }%>
     </main>
 
 <%- include('includes/end.ejs') %>
