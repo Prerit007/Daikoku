@@ -1,7 +1,6 @@
 const exp = require('express');
-const path = require('path');
 
-const p1Controller = require('../controllers/projects');
+const pController = require('../controllers/projects');
 
 const router = exp.Router();
 
@@ -35,6 +34,9 @@ router.get('/p4', (req,res,next) => {
     });
 });
 
-router.post('/p1', p1Controller.saveP1);
+router.post('/p1', pController.saveP1);
+router.post('/p2', pController.saveP2);
+router.post('/p3', pController.saveP3);
+router.post('/p4', pController.saveP4);
 
 module.exports = router;

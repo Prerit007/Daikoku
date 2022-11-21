@@ -44,7 +44,7 @@ exports.postLogin = (req, res, next) => {
                 return req.session.save(err => {
                     if(!student.isInfoComplete) {
                         return res.redirect('/info'); }
-                    return res.redirect('/home'); //it should be redirected to profile
+                    return res.redirect('/profile'); 
             });
             }
             req.flash('error', "Invalid email or password");

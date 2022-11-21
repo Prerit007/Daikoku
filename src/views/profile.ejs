@@ -7,9 +7,11 @@
         <h2>College: </h2>
         <h3><%= student.college %></h3>
         <h2>Projects: </h2>
-        <% for (let i=0; i< student.projectList['projects'].length; i++) {%>
-        <h3><%= student.projectList['projects'][i].projectId %></h3>
-        <% }%>
+        <% if (student.projectList['projects'].length == 0) { %>
+            <h3>No projects done yet! Try one now...</h3>
+        <% } else { for (let i=0; i< student.projectList['projects'].length; i++) {%>
+        <h3><%= student.projectList['projects'][i].projName %></h3>
+        <% } } %>
     </main>
 
 <%- include('includes/end.ejs') %>
