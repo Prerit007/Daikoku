@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+    <main>
+        <h1>Code Editor</h1>
+        <h1>5000</h1>
+        <h2>Webdev, C++</h2>
+        <% if (isAuthenticated) { %>
+            <form class="projects-form" action="/p2" method="POST">
+                <div class="form-control">
+                    <label for="">Submission Link</label>
+                    <input type="text" name="proj2" id="proj2">
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        <% } %>
+    </main>
+
+<%- include('includes/end.ejs') %>

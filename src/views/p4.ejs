@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+    <main>
+        <h1>Flappy Bird Game</h1>
+        <h1>5000</h1>
+        <h2>C#, C==, Unity, Unreal</h2>
+        <% if (isAuthenticated) { %>
+            <form class="projects-form" action="/p4" method="POST">
+                <div class="form-control">
+                    <label for="">Submission Link</label>
+                    <input type="text" name="proj4" id="proj4">
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        <% } %>
+    </main>
+
+<%- include('includes/end.ejs') %>
