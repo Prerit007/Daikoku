@@ -1,4 +1,87 @@
-<%- include('includes/head.ejs') %>
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f9d113fa58.js" crossorigin="anonymous"></script>
+    <link href="/css/output.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <title>About | Daikoku</title>
+    </head>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/635965f8daff0e1306d4222b/1ggajclni';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+    <div>
+        <nav class="relative container mx-auto p-6 bg-veryDarkBlue">
+            
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between space-x-4">
+                    <div class="pt-2">
+                        <img src="/images/LOGO.svg" alt="Logo" />
+                    </div>
+                    <div class="pt-2">
+                        <h1 class="text-white text-xl">DAIKOKU</h1>
+                    </div>
+                </div>
+                
+            <div class="flex items-center justify-between space-x-14">
+                <div class="hidden space-x-6 md:flex">
+                    <a href="home" class="hover:text-liliac text-lg text-white text-regular">Home</a>
+                    <a href="projects" class="hover:text-liliac text-lg text-white text-regular">Projects</a>
+                    <a href="blog" class="hover:text-liliac text-lg text-white text-regular">Blogs</a>
+                    <a href="contact" class="hover:text-liliac text-lg text-white text-regular">Contact</a>
+                    <a class="text-lg text-orange text-regular">About</a>
+                </div>
+            
+            
+                <div class="flex items-center justify-between space-x-4 text-ba">
+                    <% if (!isAuthenticated) { %>
+                    <a href="login" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Log In</a>
+                    <!-- <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a> -->
+                    <% } else { %>
+                        <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                            <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
+                        <form action="/logout" method="POST">
+                            <button type="submit">Log Out</button>
+                        </form>
+                    <% } %>
+                    <a href="#"><i style="color:white" class="fa-brands fa-facebook-f fa-lg"></i></a>
+                    <a href="#"><i style="color:white" class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/company/dai-koku/"><i style="color:white" class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+            
+        <!--
+            <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+            </div>
+
+            <div class="md:hidden">
+            <div id="menu" class="absolute flex-col items-center self-end hidden py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto
+            sm:self-center left-6 right-6 drop-shadow-md">
+            <a href="#">Pricing</a>
+            <a href="#">Product</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Community</a>
+            </div>
+            </div>
+        -->
+            
+        </nav>
     <main>
         <h1>Flappy Bird Game</h1>
         <h1>5000</h1>
@@ -14,4 +97,72 @@
         <% } %>
     </main>
 
-<%- include('includes/end.ejs') %>
+    <footer class="bg-veryDarkBlue">
+        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
+            <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
+            <div>
+                <h3 class="text-white underline">Contact</h3>
+                <p class="text-white">Shiv Nadar University
+                    Delhi NCR, 201314
+                </p> 
+                <a href="officialdaikoku@gmail.com" class="text-white underline">officialdaikoku@gmail.com</a>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <a href="#">
+                <img src="/images/icon-facebook.svg" class="h-8" alt="Facebook" />
+                </a>
+                <a href="#">
+                <img src="/images/icon-twitter.svg" class="h-8" alt="Twitter" />
+                </a>
+                <a href="#">
+                <img src="/images/icon-instagram.svg" class="h-8" alt="Instagram" />
+                </a>
+            </div>
+            </div>
+            <div class="flex justify-around space-x-32">
+            <div class="flex flex-col space-y-3 text-white">
+                <a href="home" class="hover:text-brightRed no-underline hover:underline">Home</a>
+                <a class="text-brightRed underline">Projects</a>
+                <a href="blog" class="hover:text-brightRed no-underline hover:underline">Blogs</a>
+                <a href="contact" class="hover:text-brightRed no-underline hover:underline">Contact</a>
+                <a href="about" class="hover:text-brightRed no-underline hover:underline">About Us</a>
+            </div>
+            <div class="flex flex-col space-y-3 text-white">
+                <a href="#" class="hover:text-brightRed no-underline hover:underline">Careers</a>
+                <a href="#" class="hover:text-brightRed no-underline hover:underline">Community</a>
+                <a href="#" class="hover:text-brightRed no-underline hover:underline">Privacy Policy</a>
+            </div>
+            </div>
+            <div class="flex flex-col justify-between space-y-6">
+            <div>
+                <h2 class="text-white underline">Be in the Know</h2>
+                <p class="text-white">
+                    To be in the loop for our latest developments 
+                    sign up for our newsletter.​​​</p>
+            </div>
+            <div class="justify-between space-y-1">
+                
+                <form>
+                        <div class="flex space-x-3">
+                            <input
+                            type="text"
+                            class="flex-1 px-4 rounded-full focus:outline-none"
+                            placeholder="Updated in your inbox"
+                            />
+                            <button
+                            class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
+                            >
+                            Submit
+                            </button>
+                        </div>
+                </form>
+            </div>
+            
+            <div class="hidden text-white md:block">
+                Copyright &copy; 2022, All Rights Reserved
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

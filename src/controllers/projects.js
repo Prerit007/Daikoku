@@ -4,10 +4,15 @@ exports.saveP1 = async (req, res, next) => {
     let linkP1 = req.body.proj1;
 
     let student = await Student.findById(req.id);
+    if (student.projectList['projects'].includes({projectId: "635a859b9e8f14404ec56f9b"})) {
+        console.log("In if");
+        req.flash("Already submitted!");
+    } else {
     student.projectList['projects'].push({projectId: "635a859b9e8f14404ec56f9b",
     projName: "Chat Bot",
     projLink: linkP1});
-    await student.save();
+    await student.save(); 
+    req.flash("Submitted Successfully"); }
     res.redirect('/profile');
 };
 

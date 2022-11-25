@@ -19,6 +19,9 @@
                         <i class="fa-solid fa-xl fa-arrow-left"></i>
                     </a>
                 </div>
+                <% if (errorMessage) { %>
+                    <div><%= errorMessage %></div>
+                <% } %>
                 <form action="/login" class="sign-in-form" method="POST">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
@@ -39,6 +42,9 @@
                         <i class="fab fa-google"></i>
                     </a>
                 </div>
+                <% if (errorMessage) { %>
+                    <div><%= errorMessage %></div>
+                <% } %>
                 </form>
                 <form action="/signup" class="sign-up-form" method="POST">
                 <h2 class="title">Sign up</h2>
