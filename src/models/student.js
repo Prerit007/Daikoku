@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { INTEGER } = require('sequelize');
 
 const Schema = mongoose.Schema;
 
@@ -11,8 +12,10 @@ const studentSchema = new Schema({
         projLink: {type: String}
     }]},
     name: String,
-    about: String,
     college: String,
+    year: Number,
+    contact: Number,
+    about: String,
     isInfoComplete: {type: Boolean, default: false}
 });
 

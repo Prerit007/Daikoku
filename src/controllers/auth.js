@@ -91,8 +91,10 @@ exports.postSignup = (req, res, next) => {
                 password: hashedPassword,
                 projectList: {projects:[]},
                 name: "",
-                about: "",
-                college: ""
+                college: "",
+                year: "",
+                contact: "",
+                about: ""
             });
             return student.save();
         })
