@@ -6,6 +6,8 @@
     <script src="https://kit.fontawesome.com/f9d113fa58.js" crossorigin="anonymous"></script>
     <link href="/css/output.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-info.css">
     <title>About | Daikoku</title>
     </head>
 <script type="text/javascript">
@@ -84,24 +86,38 @@
             
         </nav>
 
-
-    <main>
-        <form class="login-form" action="/info" method="POST">
-            <div class="form-control">
-                <label for="Name">Name</label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div class="form-control">
-                <label for="About">About</label>
-                <input type="text" name="about" id="about">
-            </div>
-            <div class="form-control">
-                <label for="College">College</label>
-                <input type="text" name="college" id="college">
-            </div>
-            <button class="btn" type="submit">Submit</button>
-        </form>
-    </main>
+        <div class="container">
+            <h1>GETTING TO KNOW YOU</h1>
+            <form>
+                <div class="row">
+                    <div class="column">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="">
+                    </div>
+                    <div class="column">
+                        <label for="email">College Name</label>
+                        <input type="email" id="email" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="subject">Graduation Year</label>
+                        <input type="text" id="subject" placeholder="">
+                    </div>
+                    <div class="column">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="issue">About</label>
+                        <textarea id="issue" placeholder="" rows="3"></textarea>
+                    </div>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
 
     <footer class="bg-veryDarkBlue">
         <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
