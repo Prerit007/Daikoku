@@ -102,21 +102,23 @@
                   <div class="image">
                     <img src="/images/c2.png" alt="">
                   </div>
-                  <div class="info">
-                    <div class="brand"><h2></h2></div>
-                      <form class="grid place-items-center">
-                            <input
-                              type="text"
-                              class="flex-1 rounded-full focus:outline-none"
-                              placeholder="Submit Your Github Link"
-                            />
-                            <button
-                              class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
-                            >
-                              Submit
-                            </button>
-                      </form>
-                  </div>
+                  <% if (isAuthenticated) { %>
+                    <div class="info">
+                      <div class="brand"><h2></h2></div>
+                        <form class="grid place-items-center">
+                              <input
+                                type="text"
+                                class="flex-1 rounded-full focus:outline-none"
+                                placeholder="Submit Your Github Link"
+                              />
+                              <button
+                                class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
+                              >
+                                Submit
+                              </button>
+                        </form>
+                    </div>
+                    <% } %>
                 </div>
               </div>
             </div>
