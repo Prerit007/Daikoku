@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style-p1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
-    <title>About | Daikoku</title>
+    <title>Daikoku | UI Design</title>
     </head>
  <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -105,11 +105,13 @@
                   <% if (isAuthenticated) { %>
                     <div class="info">
                       <div class="brand"><h2></h2></div>
-                        <form class="grid place-items-center">
+                        <form class="grid place-items-center" action="/p3" method="POST">
                               <input
                                 type="text"
                                 class="flex-1 rounded-full focus:outline-none"
                                 placeholder="Submit Your Github Link"
+                                id="proj3"
+                                name="proj3"
                               />
                               <button
                                 class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"

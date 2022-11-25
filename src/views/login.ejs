@@ -19,11 +19,14 @@
                         <i class="fa-solid fa-xl fa-arrow-left"></i>
                     </a>
                 </div>
+                <% if (errorMessage) { %>
+                    <div class="user-message user-message--error"><%= errorMessage %></div>
+                <% } %>
                 <form action="/login" class="sign-in-form" method="POST">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Email" id="email" name="email" />
+                    <input type="email" placeholder="Email" id="email" name="email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>

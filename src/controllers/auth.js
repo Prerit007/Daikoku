@@ -67,7 +67,7 @@ exports.getSignup = (req, res, next) => {
     res.render('login', {
         path: '/signup',
         isAuthenticated: false,
-        errorMessage1: message
+        errorMessage: message
     });
 };
 
@@ -80,7 +80,7 @@ exports.postSignup = (req, res, next) => {
     .then(stdDoc => {
         if (stdDoc) {
             req.flash('error', 'E-Mail exists already, please pick a different one.')
-            return res.redirect('/signup');
+            return;
         }
         //TODO check confirmPassword == password
         return bcrypt
