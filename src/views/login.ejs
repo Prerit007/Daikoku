@@ -19,7 +19,7 @@
                         <i class="fa-solid fa-xl fa-arrow-left"></i>
                     </a>
                 </div>
-                <form action="#" class="sign-in-form">
+                <form action="/login" class="sign-in-form" method="POST">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
@@ -44,15 +44,15 @@
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <input type="email" placeholder="Email" id="email1" name="email1"/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" id="password1" name="password1"/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword"/>
                 </div>
                 <input type="submit" class="btn" value="Sign up" />
                 <p class="social-text">Or Sign up with social platforms</p>

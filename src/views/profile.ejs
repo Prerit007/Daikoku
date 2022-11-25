@@ -46,16 +46,16 @@
                 <div class="flex items-center justify-between space-x-4 text-ba">
                   <% if (!isAuthenticated) { %>
                     <a href="login" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                        <i class="fa-solid fa-circle-user fa-lg"></i>Log In</a>
-                    <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                        <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a>
-                  <% } else { %>
-                      <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                          <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
-                      <form action="/logout" method="POST">
-                          <button type="submit">Log Out</button>
-                      </form>
-                  <% } %>
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Join</a>
+                    <!-- <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a> -->
+                    <% } else { %>
+                        <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                            <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
+                        <form action="/logout" method="POST">
+                            <button type="submit">Log Out</button>
+                        </form>
+                    <% } %>
                     <a href="#"><i style="color:white" class="fa-brands fa-facebook-f fa-lg"></i></a>
                     <a href="#"><i style="color:white" class="fa-brands fa-instagram fa-lg"></i></a>
                     <a href="https://www.linkedin.com/company/dai-koku/"><i style="color:white" class="fa-brands fa-linkedin-in fa-lg"></i></a>
