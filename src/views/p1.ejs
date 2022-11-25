@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f9d113fa58.js" crossorigin="anonymous"></script>
     <link href="/css/output.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/style-p1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
     <title>About | Daikoku</title>
     </head>
@@ -85,11 +87,25 @@
         </nav>
     <section class="project">
         <main>
-            <h1>Chat Bot</h1>
-            <h1>5000</h1>
-            <h2>Python</h2>
-            <% if (isAuthenticated) { %>
-                <div class="justify-between space-y-1">
+          <div class="container">
+            <div class="box one">
+              <div class="details">
+                <div class="topic">CHAT BOT</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consequatur corporis vitae nobis, ut veniam earum expedita eaque at placeat perferendis unde voluptates explicabo rerum distinctio quis, illo, porro et?</p>
+                  <div class="price-box">
+                    <div class="price">$1500.00</div>
+                  </div>
+              </div>
+            </div>
+            <div class="box two">
+              <div class="image-box">
+                <div class="image">
+                  <img src="/images/c1.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="brand"><h2></h2></div>
+                  <div class="name"></div>
+                  <div class="justify-between space-y-1">
                     <form>
                         <div class="flex space-x-3">
                           <input
@@ -104,78 +120,12 @@
                           </button>
                         </div>
                     </form>
+                  </div>
                 </div>
-            <% } %>
+              </div>
+            </div>
+          </div>
         </main>
     </section>
-
-    <footer class="bg-veryDarkBlue">
-        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
-          <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
-            <div>
-                <h3 class="text-white underline">Contact</h3>
-                <p class="text-white">Shiv Nadar University
-                    Delhi NCR, 201314
-                </p> 
-                <a href="officialdaikoku@gmail.com" class="text-white underline">officialdaikoku@gmail.com</a>
-            </div>
-            <div class="flex justify-center space-x-4">
-              <a href="#">
-                <img src="/images/icon-facebook.svg" class="h-8" alt="Facebook" />
-              </a>
-              <a href="#">
-                <img src="/images/icon-twitter.svg" class="h-8" alt="Twitter" />
-              </a>
-              
-              <a href="#">
-                <img src="/images/icon-instagram.svg" class="h-8" alt="Instagram" />
-              </a>
-            </div>
-          </div>
-          <div class="flex justify-around space-x-32">
-            <div class="flex flex-col space-y-3 text-white">
-              <a href="home" class="hover:text-brightRed no-underline hover:underline">Home</a>
-              <a href="projects" class="hover:text-brightRed no-underline hover:underline">Projects</a>
-              <a href="blog" class="hover:text-brightRed no-underline hover:underline">Blogs</a>
-              <a href="contact" class="hover:text-brightRed no-underline hover:underline">Contact</a>
-              <a class="text-brightRed underline">About Us</a>
-            </div>
-            <div class="flex flex-col space-y-3 text-white">
-              <a href="#" class="hover:text-brightRed no-underline hover:underline">Careers</a>
-              <a href="#" class="hover:text-brightRed no-underline hover:underline">Community</a>
-              <a href="#" class="hover:text-brightRed no-underline hover:underline">Privacy Policy</a>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between space-y-6">
-            <div>
-                <h2 class="text-white underline">Be in the Know</h2>
-                <p class="text-white">
-                    To be in the loop for our latest developments 
-                    sign up for our newsletter.​​​</p>
-            </div>
-            <div class="justify-between space-y-1">
-                
-                <form>
-                        <div class="flex space-x-3">
-                          <input
-                            type="text"
-                            class="flex-1 px-4 rounded-full focus:outline-none"
-                            placeholder="Updated in your inbox"
-                          />
-                          <button
-                            class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
-                          >
-                            Submit
-                          </button>
-                        </div>
-                </form>
-            </div>
-            
-            <div class="hidden text-white md:block">
-              Copyright &copy; 2022, All Rights Reserved
-            </div>
-          </div>
-        </div>
-    </footer>
 </body>
 </html>
