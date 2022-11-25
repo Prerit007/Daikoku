@@ -183,17 +183,14 @@ section .container .contactForm .formBox .inputBox textarea
 
 section .container .contactForm .formBox .inputBox span
 {
-    position: absolute;
-    left: 0;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: 300;
-    color: #333;
-    transition: 0.5s;
-    pointer-events: none;
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
 }
 
-section .container .contactForm .formBox .inputBox input:focus ~ span,
+/*section .container .contactForm .formBox .inputBox input:focus ~ span,
 section .container .contactForm .formBox .inputBox textarea:focus ~ span,
 section .container .contactForm .formBox .inputBox input:valid ~ span,
 section .container .contactForm .formBox .inputBox textarea:valid ~ span
@@ -204,6 +201,7 @@ section .container .contactForm .formBox .inputBox textarea:valid ~ span
     letter-spacing: 1px;
     color: #ff568c;
 }
+*/
 
 section .container .contactForm .formBox .inputBox input[type="submit"]
 {
