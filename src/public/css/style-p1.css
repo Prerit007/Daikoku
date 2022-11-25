@@ -58,6 +58,7 @@ section .container{
 .box.one .price{
   color: #c9032e;
   font-size: 30px;
+  align-items: center;
 }
 .box.one .button1{
   margin-top: 55px;

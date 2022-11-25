@@ -567,6 +567,10 @@ video {
   right: 1.5rem;
 }
 
+.right-10 {
+  right: 2.5rem;
+}
+
 .m-20 {
   margin: 5rem;
 }
@@ -698,6 +702,10 @@ video {
   height: 2rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -744,6 +752,14 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-center {
