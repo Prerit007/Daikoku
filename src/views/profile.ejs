@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f9d113fa58.js" crossorigin="anonymous"></script>
     <link href="/css/output.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
-    <title>Daikoku | Profile</title>
+    <title>Profile | Daikoku</title>
     </head>
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/635965f8daff0e1306d4222b/1ggajclni';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-</script>
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/635965f8daff0e1306d4222b/1ggajclni';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+      </script>
     <div>
         <nav class="relative container mx-auto p-6 bg-veryDarkBlue">
             
@@ -34,27 +35,27 @@
                 
             <div class="flex items-center justify-between space-x-14">
                 <div class="hidden space-x-6 md:flex">
-                    <a href="home" class="hover:text-liliac text-lg text-white text-regular">Home</a>
+                    <a href="home"class="hover:text-liliac text-lg text-white text-regular">Home</a>
                     <a href="projects" class="hover:text-liliac text-lg text-white text-regular">Projects</a>
                     <a href="blog" class="hover:text-liliac text-lg text-white text-regular">Blogs</a>
-                    <a href="contact" class="hover:text-liliac text-lg text-white text-regular">Contact</a>
-                    <a class="text-lg text-orange text-regular">About</a>
+                    <a class="text-lg text-orange text-regular">Contact</a>
+                    <a href="about" class="hover:text-liliac text-lg text-white text-regular">About</a>
                 </div>
             
             
                 <div class="flex items-center justify-between space-x-4 text-ba">
-                    <% if (!isAuthenticated) { %>
+                  <% if (!isAuthenticated) { %>
                     <a href="login" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                        <i class="fa-solid fa-circle-user fa-lg"></i>Join</a>
-                    <!-- <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                        <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a> -->
-                    <% } else { %>
-                        <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
-                            <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
-                        <form action="/logout" method="POST">
-                            <button type="submit">Log Out</button>
-                        </form>
-                    <% } %>
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Log In</a>
+                    <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                        <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a>
+                  <% } else { %>
+                      <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                          <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
+                      <form action="/logout" method="POST">
+                          <button type="submit">Log Out</button>
+                      </form>
+                  <% } %>
                     <a href="#"><i style="color:white" class="fa-brands fa-facebook-f fa-lg"></i></a>
                     <a href="#"><i style="color:white" class="fa-brands fa-instagram fa-lg"></i></a>
                     <a href="https://www.linkedin.com/company/dai-koku/"><i style="color:white" class="fa-brands fa-linkedin-in fa-lg"></i></a>
@@ -82,87 +83,113 @@
         -->
             
         </nav>
-
-    <main>
-        <h1>Welcome, <%= student.name %></h1>
-        <h2>About: </h2>
-        <h3><%= student.about %></h3>
-        <h2>College: </h2>
-        <h3><%= student.college %></h3>
-        <h2>Projects: </h2>
-        <% if (student.projectList['projects'].length == 0) { %>
-            <h3>No projects done yet! Try one now...</h3>
-        <% } else { for (let i=0; i< student.projectList['projects'].length; i++) {%>
-        <h3><%= student.projectList['projects'][i].projName %></h3>
-        <% } } %>
-    </main>
-
-    <footer class="bg-veryDarkBlue">
-        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
-            <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
-            <div>
-                <h3 class="text-white underline">Contact</h3>
-                <p class="text-white">Shiv Nadar University
-                    Delhi NCR, 201314
-                </p> 
-                <a href="officialdaikoku@gmail.com" class="text-white underline">officialdaikoku@gmail.com</a>
-            </div>
-            <div class="flex justify-center space-x-4">
-                <a href="#">
-                <img src="/images/icon-facebook.svg" class="h-8" alt="Facebook" />
-                </a>
-                <a href="#">
-                <img src="/images/icon-twitter.svg" class="h-8" alt="Twitter" />
-            </a>
-            <a href="#">
-                <img src="/images/icon-instagram.svg" class="h-8" alt="Instagram" />
-                </a>
-            </div>
-        </div>
-        <div class="flex justify-around space-x-32">
-            <div class="flex flex-col space-y-3 text-white">
-                <a href="home" class="hover:text-brightRed no-underline hover:underline">Home</a>
-                <a href="projects" class="hover:text-brightRed no-underline hover:underline">Projects</a>
-                <a href="blog" class="hover:text-brightRed no-underline hover:underline">Blogs</a>
-                <a href="contact" class="hover:text-brightRed no-underline hover:underline">Contact</a>
-                <a class="text-brightRed underline">About Us</a>
-            </div>
-            <div class="flex flex-col space-y-3 text-white">
-                <a href="#" class="hover:text-brightRed no-underline hover:underline">Careers</a>
-                <a href="#" class="hover:text-brightRed no-underline hover:underline">Community</a>
-                <a href="#" class="hover:text-brightRed no-underline hover:underline">Privacy Policy</a>
-            </div>
-            </div>
-        <div class="flex flex-col justify-between space-y-6">
-            <div>
-                <h2 class="text-white underline">Be in the Know</h2>
-                <p class="text-white">
-                    To be in the loop for our latest developments 
-                    sign up for our newsletter.​​​</p>
-            </div>
-            <div class="justify-between space-y-1">
+        <section id="feedback" class="">
+              <div class="container">
+                <div class="contactinfo">
+                    <img src="person.svg" alt="user">
+                </div>
                 
-                <form>
-                        <div class="flex space-x-3">
-                            <input
-                            type="text"
-                            class="flex-1 px-4 rounded-full focus:outline-none"
-                            placeholder="Updated in your inbox"
-                            />
-                            <button
-                            class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
-                            >
-                            Submit
-                            </button>
+                <div class="contactForm">
+                    <h1>Welcome, <%= student.name %></h1>
+                    <div class="formBox">
+                        <div class="inputBox w100">
+                            <h2><%= student.about %></h2>
+                            <span>About</span>
                         </div>
-                </form>
-            </div>
-            
-            <div class="hidden text-white md:block">
-                Copyright &copy; 2022, All Rights Reserved
-            </div>
-            </div>
+                        <div class="inputBox w50">
+                            <h2>Contact</h2>
+                            <span>College Name</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <h2>Year</h2>
+                            <span>Graduation Year</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <h2>Email</h2>
+                            <span>Email Address</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <h2>Contact</h2>
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                    <h1>Projects:</h1>
+                    <% if (student.projectList['projects'].length == 0) { %>
+                      <h4>No projects done yet! Try one now...</h4>
+                  <% } else { for (let i=0; i< student.projectList['projects'].length; i++) {%>
+                  <h4><%= student.projectList['projects'][i].projName %></h4>
+                  <% } } %>
+                </div>
         </div>
-    </footer>
+      </section>
+
+        <footer class="bg-veryDarkBlue">
+            <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
+              <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
+                <div>
+                    <h3 class="text-white underline">Contact</h3>
+                    <p class="text-white">Shiv Nadar University
+                        Delhi NCR, 201314
+                    </p> 
+                    <a href="officialdaikoku@gmail.com" class="text-white underline">officialdaikoku@gmail.com</a>
+                </div>
+                <div class="flex justify-center space-x-4">
+                  <a href="#">
+                    <img src="/images/icon-facebook.svg" class="h-8" alt="Facebook" />
+                  </a>
+                  <a href="#">
+                    <img src="/images/icon-twitter.svg" class="h-8" alt="Twitter" />
+                  </a>
+                  
+                  <a href="#">
+                    <img src="/images/icon-instagram.svg" class="h-8" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
+              <div class="flex justify-around space-x-32">
+                <div class="flex flex-col space-y-3 text-white">
+                  <a href="home" class="hover:text-brightRed no-underline hover:underline">Home</a>
+                  <a href="projects" class="hover:text-brightRed no-underline hover:underline">Projects</a>
+                  <a href="blog" class="hover:text-brightRed no-underline hover:underline">Blogs</a>
+                  <a class="text-brightRed underline">Contact</a>
+                  <a href="about" class="hover:text-brightRed no-underline hover:underline">About Us</a>
+                </div>
+                <div class="flex flex-col space-y-3 text-white">
+                  <a href="#" class="hover:text-brightRed no-underline hover:underline">Careers</a>
+                  <a href="#" class="hover:text-brightRed no-underline hover:underline">Community</a>
+                  <a href="#" class="hover:text-brightRed no-underline hover:underline">Privacy Policy</a>
+                </div>
+              </div>
+              <div class="flex flex-col justify-between space-y-6">
+                <div>
+                    <h2 class="text-white underline">Be in the Know</h2>
+                    <p class="text-white">
+                        To be in the loop for our latest developments 
+                        sign up for our newsletter.​​​</p>
+                </div>
+                <div class="justify-between space-y-1">
+                    
+                    <form>
+                            <div class="flex space-x-3">
+                              <input
+                                type="text"
+                                class="flex-1 px-4 rounded-full focus:outline-none"
+                                placeholder="Updated in your inbox"
+                              />
+                              <button
+                                class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
+                              >
+                                Submit
+                              </button>
+                            </div>
+                    </form>
+                </div>
+                
+                <div class="hidden text-white md:block">
+                  Copyright &copy; 2022, All Rights Reserved
+                </div>
+              </div>
+            </div>
+        </footer>
 </body>
 </html>
