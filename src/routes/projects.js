@@ -11,26 +11,54 @@ router.get('/projects' , (req, res, next) => {
 });
 
 router.get('/p1', (req,res,next) => {
+    let message = req.flash('alert');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('p1', {
-        isAuthenticated: req.isLoggedIn
+        isAuthenticated: req.isLoggedIn,
+        alertMessage: message
     });
 });
 
 router.get('/p2', (req,res,next) => {
+    let message = req.flash('alert');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('p2', {
-        isAuthenticated: req.isLoggedIn
+        isAuthenticated: req.isLoggedIn,
+        alertMessage: message
     });
 });
 
 router.get('/p3', (req,res,next) => {
+    let message = req.flash('alert');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('p3', {
-        isAuthenticated: req.isLoggedIn
+        isAuthenticated: req.isLoggedIn,
+        alertMessage: message
     });
 });
 
 router.get('/p4', (req,res,next) => {
+    let message = req.flash('alert');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('p4', {
-        isAuthenticated: req.isLoggedIn
+        isAuthenticated: req.isLoggedIn,
+        alertMessage: message
     });
 });
 
