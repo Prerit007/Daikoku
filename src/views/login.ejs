@@ -19,9 +19,6 @@
                         <i class="fa-solid fa-xl fa-arrow-left"></i>
                     </a>
                 </div>
-                <% if (errorMessage) { %>
-                    <div><%= errorMessage %></div>
-                <% } %>
                 <form action="/login" class="sign-in-form" method="POST">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
@@ -42,23 +39,20 @@
                         <i class="fab fa-google"></i>
                     </a>
                 </div>
-                <% if (errorMessage) { %>
-                    <div><%= errorMessage %></div>
-                <% } %>
                 </form>
                 <form action="/signup" class="sign-up-form" method="POST">
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="email" placeholder="Email" id="email" name="email"/>
+                    <input type="email" placeholder="Email" id="email1" name="email1"/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Password" id="password1" name="password1"/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Confirm Password" />
+                    <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword"/>
                 </div>
                 <input type="submit" class="btn" value="Sign up" />
                 <p class="social-text">Or Sign up with social platforms</p>
