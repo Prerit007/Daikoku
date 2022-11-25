@@ -117,9 +117,12 @@
                     <h2>Projects:</h2>
                     <% if (student.projectList['projects'].length == 0) { %>
                       <h4>No projects done yet! Try one now...</h4>
+                      <ul>
                   <% } else { for (let i=0; i< student.projectList['projects'].length; i++) {%>
-                  <h4><%= student.projectList['projects'][i].projName %></h4>
+                  <li><%= student.projectList['projects'][i].projName %></>
                   <% } } %>
+                  </li>
+                  </ul>
                 </div>
         </div>
       </section>
