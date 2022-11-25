@@ -2,8 +2,8 @@ const exp = require('express');
 
 const router = exp.Router();
 
-router.get('/about', (req, res, next) => {
-    res.render('about', {
+router.get('/blog', (req, res, next) => {
+    res.render('blog', {
         isAuthenticated: req.isLoggedIn
     });
 

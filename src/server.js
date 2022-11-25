@@ -13,6 +13,7 @@ const projectsData = require("./routes/projects");
 const infoData = require("./routes/info");
 const profileData = require("./routes/profile");
 const authData = require("./routes/auth");
+const blogData = require("./routes/blog");
 const Student = require("./models/student");
 
 const MONGODB_URI =
@@ -62,6 +63,7 @@ app.use(projectsData);
 app.use(authData);
 app.use(infoData);
 app.use(profileData);
+app.use(blogData);
 
 mongoose
   .connect(
