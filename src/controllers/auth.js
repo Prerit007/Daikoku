@@ -56,17 +56,17 @@ exports.getSignup = (req, res, next) => {
     } else {
         message = null;
     }
-    res.render('signup', {
+    res.render('login', {
         path: '/signup',
         isAuthenticated: false,
-        errorMessage: message
+        errorMessage1: message
     });
 };
 
 
 exports.postSignup = (req, res, next) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const email = req.body.email1;
+    const password = req.body.password1;
     const confirmPassword = req.body.confirmPassword;
     Student.findOne({email: email})
     .then(stdDoc => {
