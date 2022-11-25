@@ -38,7 +38,7 @@
                     <a href="projects" class="hover:text-liliac text-lg text-white text-regular">Projects</a>
                     <a href="blog" class="hover:text-liliac text-lg text-white text-regular">Blogs</a>
                     <a href="contact" class="hover:text-liliac text-lg text-white text-regular">Contact</a>
-                    <a class="text-lg text-orange text-regular">About</a>
+                    <a href="about" class="hover:text-liliac text-lg text-white text-regular">About</a>
                 </div>
             
             
@@ -49,10 +49,11 @@
                     <!-- <a href="signup" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
                         <i class="fa-solid fa-circle-user fa-lg"></i>Sign Up</a> -->
                     <% } else { %>
-                        <a href="profile" class="hidden p-3 px-6 pt-2 text-orange md:block text-lg">
+                        <a href="profile" class="hidden p-3 px-6 pt-2 text-yellow-500 md:block text-lg">
                             <i class="fa-solid fa-circle-user fa-lg"></i>Profile</a>
                         <form action="/logout" method="POST">
-                            <button type="submit">Log Out</button>
+                            <button type="submit" class="hidden p-3 px-6 pt-2 text-yellow-500 md:block text-lg">
+                              Log Out</button>
                         </form>
                     <% } %>
                     <a href="#"><i style="color:white" class="fa-brands fa-facebook-f fa-lg"></i></a>
@@ -82,18 +83,90 @@
         -->
             
         </nav>
-    <main>
-        <h1>Flappy Bird Game</h1>
-        <h1>5000</h1>
-        <h2>C#, C==, Unity, Unreal</h2>
-        <% if (isAuthenticated) { %>
-            <form class="projects-form" action="/p4" method="POST">
-                <div class="form-control">
-                    <label for="">Submission Link</label>
-                    <input type="text" name="proj4" id="proj4">
-                </div>
-                <button class="btn" type="submit">Submit</button>
-            </form>
-        <% } %>
-    </main>
+        <section class="project">
+          <main>
+            <h1>Flappy Bird Game</h1>
+            <h1>5000</h1>
+            <h2>C#, C==, Unity, Unreal</h2>
+            <% if (isAuthenticated) { %>
+                <form class="projects-form" action="/p4" method="POST">
+                    <div class="form-control">
+                        <label for="">Submission Link</label>
+                        <input type="text" name="proj4" id="proj4">
+                    </div>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+            <% } %>
+        </main>
+        </section>
 
+    <footer class="bg-veryDarkBlue">
+        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
+          <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
+            <div>
+                <h3 class="text-white underline">Contact</h3>
+                <p class="text-white">Shiv Nadar University
+                    Delhi NCR, 201314
+                </p> 
+                <a href="officialdaikoku@gmail.com" class="text-white underline">officialdaikoku@gmail.com</a>
+            </div>
+            <div class="flex justify-center space-x-4">
+              <a href="#">
+                <img src="/images/icon-facebook.svg" class="h-8" alt="Facebook" />
+              </a>
+              <a href="#">
+                <img src="/images/icon-twitter.svg" class="h-8" alt="Twitter" />
+              </a>
+              
+              <a href="#">
+                <img src="/images/icon-instagram.svg" class="h-8" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-around space-x-32">
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="home" class="hover:text-brightRed no-underline hover:underline">Home</a>
+              <a href="projects" class="hover:text-brightRed no-underline hover:underline">Projects</a>
+              <a href="blog" class="hover:text-brightRed no-underline hover:underline">Blogs</a>
+              <a href="contact" class="hover:text-brightRed no-underline hover:underline">Contact</a>
+              <a class="text-brightRed underline">About Us</a>
+            </div>
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="#" class="hover:text-brightRed no-underline hover:underline">Careers</a>
+              <a href="#" class="hover:text-brightRed no-underline hover:underline">Community</a>
+              <a href="#" class="hover:text-brightRed no-underline hover:underline">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between space-y-6">
+            <div>
+                <h2 class="text-white underline">Be in the Know</h2>
+                <p class="text-white">
+                    To be in the loop for our latest developments 
+                    sign up for our newsletter.​​​</p>
+            </div>
+            <div class="justify-between space-y-1">
+                
+                <form>
+                        <div class="flex space-x-3">
+                          <input
+                            type="text"
+                            class="flex-1 px-4 rounded-full focus:outline-none"
+                            placeholder="Updated in your inbox"
+                          />
+                          <button
+                            class="px-6 py-2 text-white rounded-full bg-darkRed hover:bg-brightRedLight focus:outline-none"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                </form>
+            </div>
+            
+            <div class="hidden text-white md:block">
+              Copyright &copy; 2022, All Rights Reserved
+            </div>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
