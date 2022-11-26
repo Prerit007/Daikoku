@@ -1,5 +1,6 @@
 *{
     margin:0; padding:0;
+    bottom: 5px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -74,7 +75,7 @@
     line-height: 40px;
     background: #fff;
     color:#d63031;
-    margin:5px auto;
+    margin:10px;
     text-decoration: none;
 }
 
