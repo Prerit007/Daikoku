@@ -5,8 +5,6 @@
 
 # How to Run:
 
-
-# Demo:
 ## 1.
 ### Move into the src directory: cd src
 ## 2.
@@ -18,3 +16,6 @@
 ## 5.
 ### Ready to use
 
+
+# Demo:
+## http://167.71.231.244:3002/home
